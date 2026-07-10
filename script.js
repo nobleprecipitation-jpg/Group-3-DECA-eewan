@@ -284,28 +284,40 @@ function runCode() {
     outputDisplay.innerHTML = '';
 
     if (!['A', 'B', 'C', 'D'].includes(userAnswer)) {
-        handleFailure('[-] Incorrect Component Selected.\nSystem Execution Failed.');
+        outputDisplay.innerHTML += `<div class="error-msg">[-] Invalid response. Please enter A, B, C, or D.</div>`;
+        triggerAccessDenied();
+        document.getElementById('run-btn').disabled = true;
+
+        setTimeout(() => {
+            advanceToNextQuestion(levelData);
+            document.getElementById('run-btn').disabled = false;
+        }, 1400);
         return;
     }
 
     if (userAnswer === question.correct) {
         correctAnswers++;
         outputDisplay.innerHTML += `<div class="success-msg">[+] Correct Component Selected.<br>Continuing System Execution...</div>`;
-        document.getElementById('run-btn').disabled = true;
-
-        setTimeout(() => {
-            currentQuestionIndex++;
-            if (currentQuestionIndex >= levelData.questions.length) {
-                currentQuestionIndex = 0;
-                currentLevel++;
-                updateProgressBar();
-            }
-            loadLevel();
-            document.getElementById('run-btn').disabled = false;
-        }, 1800);
     } else {
-        handleFailure('[-] Incorrect Component Selected.\nSystem Execution Failed.');
+        outputDisplay.innerHTML += `<div class="error-msg">[-] Incorrect Component Selected.<br>System Execution Failed.</div>`;
     }
+
+    document.getElementById('run-btn').disabled = true;
+
+    setTimeout(() => {
+        advanceToNextQuestion(levelData);
+        document.getElementById('run-btn').disabled = false;
+    }, 1400);
+}
+
+function advanceToNextQuestion(levelData) {
+    currentQuestionIndex++;
+    if (currentQuestionIndex >= levelData.questions.length) {
+        currentQuestionIndex = 0;
+        currentLevel++;
+        updateProgressBar();
+    }
+    loadLevel();
 }
 
 function handleFailure(msg) {
