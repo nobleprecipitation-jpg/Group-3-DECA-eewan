@@ -25,7 +25,7 @@ function drawMatrix() {
 setInterval(drawMatrix, 33);
 window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 
-//Levels 1 to 10
+//Levels 1 to 10, each  level different scenario and questions
 const levels = [
     {
         title: "LEVEL 1: Document Creation",
