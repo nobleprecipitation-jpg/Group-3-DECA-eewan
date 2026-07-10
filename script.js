@@ -308,8 +308,8 @@ function gameComplete() {
                 50%      { transform:translateY(-10px) scale(1.02); }
             }
             @keyframes gc-bombPulseGlow {
-                0%,100% { filter:drop-shadow(0 0 6px #0f0) drop-shadow(0 0 12px #0f0); }
-                50%      { filter:drop-shadow(0 0 20px #0f0) drop-shadow(0 0 40px #00ff88); }
+                0%,100% { filter:drop-shadow(0 0 6px #4dc9ff) drop-shadow(0 0 12px #4dc9ff); }
+                50%      { filter:drop-shadow(0 0 20px #4dc9ff) drop-shadow(0 0 40px #00bfff); }
             }
             @keyframes gc-fuseTravel {
                 0%   { stroke-dashoffset: 220; }
@@ -368,8 +368,8 @@ function gameComplete() {
                 0%,100% { opacity:1; } 50% { opacity:0; }
             }
             @keyframes gc-borderPulse {
-                0%,100% { box-shadow:0 0 20px #0f0, 0 0 40px rgba(0,255,0,0.3), inset 0 0 20px rgba(0,255,0,0.05); }
-                50%      { box-shadow:0 0 40px #0f0, 0 0 80px rgba(0,255,0,0.5), inset 0 0 30px rgba(0,255,0,0.1); }
+                0%,100% { box-shadow:0 0 20px #4dc9ff, 0 0 40px rgba(77,201,255,0.3), inset 0 0 20px rgba(77,201,255,0.05); }
+                50%      { box-shadow:0 0 40px #4dc9ff, 0 0 80px rgba(77,201,255,0.5), inset 0 0 30px rgba(77,201,255,0.1); }
             }
             @keyframes gc-glitchRow {
                 0%,89%,100% { clip-path:none; transform:none; opacity:1; }
@@ -402,14 +402,14 @@ function gameComplete() {
                 position:absolute; inset:0;
                 background: repeating-linear-gradient(
                     0deg, transparent, transparent 2px,
-                    rgba(0,255,0,0.018) 2px, rgba(0,255,0,0.018) 4px
+                    rgba(77,201,255,0.018) 2px, rgba(77,201,255,0.018) 4px
                 );
                 pointer-events:none; z-index:1;
             }
             .gc-scanline-sweep {
                 position:absolute; left:0; right:0; height:80px;
                 background:linear-gradient(to bottom, transparent,
-                    rgba(0,255,0,0.07) 50%, transparent);
+                    rgba(77,201,255,0.07) 50%, transparent);
                 animation:gc-scanline 2.5s linear infinite;
                 pointer-events:none; z-index:2;
             }
@@ -656,7 +656,7 @@ function gameComplete() {
         flashG.style.cssText = `
             position:fixed;inset:0;z-index:10003;pointer-events:none;
             background:radial-gradient(circle at center,
-                rgba(0,255,0,0.75) 0%, rgba(0,100,0,0.45) 45%, transparent 100%);
+                rgba(77,201,255,0.75) 0%, rgba(0,70,120,0.45) 45%, transparent 100%);
             animation:gc-flashGreen 0.9s ease-out forwards;
         `;
         document.body.appendChild(flashG);
@@ -673,7 +673,7 @@ function gameComplete() {
         setTimeout(() => flashW.remove(), 450);
 
         // EMP rings
-        const empColors = ['#0f0','#ff0','#0ff','#fff'];
+        const empColors = ['#4dc9ff','#7bdcff','#00bfff','#fff'];
         empColors.forEach((col, i) => {
             const ring = document.createElement('div');
             ring.style.cssText = `
@@ -702,7 +702,7 @@ function gameComplete() {
         const CY = window.innerHeight / 2;
 
         const SYSTEM_CHARS = '01HARDWARE SOFTWARE CPU RAM STORAGE OUTPUT DEVICE SYSTEM ARCHITECTURE ';
-        const COL_GREEN  = ['#00ff00','#44ff44','#00cc00','#88ff88','#00ff88'];
+        const COL_BLUE   = ['#4dc9ff','#7bdcff','#00bfff','#8fe7ff','#5bbcff'];
         const COL_FIRE   = ['#ff4400','#ff8800','#ffcc00','#ffffff','#ff2200'];
         const COL_CYAN   = ['#00ffff','#00cccc'];
 
@@ -715,7 +715,7 @@ function gameComplete() {
             const spd     = 3 + Math.random() * 20;
             const isFire  = Math.random() > 0.65;
             const isChar  = !isFire && Math.random() > 0.45;
-            const colPool = isFire ? COL_FIRE : (isChar ? COL_GREEN : COL_CYAN);
+            const colPool = isFire ? COL_FIRE : (isChar ? COL_BLUE : COL_CYAN);
             const col     = colPool[Math.floor(Math.random() * colPool.length)];
             P.push({
                 x: CX, y: CY,
@@ -745,7 +745,7 @@ function gameComplete() {
                 vx: (Math.random() - 0.5) * 1.5,
                 vy: -3 - Math.random() * 5,
                 size: 11 + Math.random() * 10,
-                col: '#00ff00',
+                col: '#4dc9ff',
                 life: 1,
                 decay: 0.004 + Math.random() * 0.007,
                 gravity: 0.35 + Math.random() * 0.2,

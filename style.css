@@ -132,7 +132,7 @@ code { color: #fff; text-shadow: 0 0 3px rgba(255,255,255,0.5); font-size: 1.1em
 }
 
 .output-line { margin-bottom: 8px; }
-.success-msg { color: #fff; text-shadow: 0 0 8px #fff; font-weight: bold; margin-top: 20px; background: rgba(0, 255, 0, 0.2); padding: 10px;}
+.success-msg { color: #fff; text-shadow: 0 0 8px #fff; font-weight: bold; margin-top: 20px; background: rgba(77, 201, 255, 0.2); padding: 10px;}
 .error-msg { color: var(--alert-red); text-shadow: 0 0 5px var(--alert-red);}
 
 .question-type-badge {
