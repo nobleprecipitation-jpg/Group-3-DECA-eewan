@@ -25,191 +25,93 @@ function drawMatrix() {
 setInterval(drawMatrix, 33);
 window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 
-//Levels 1 to 10, each  level different scenario and questions
+//Levels 1 to 10, each level uses a different exam style
 const levels = [
     {
         title: "LEVEL 1: Document Creation",
         scenario: "A student wants to type a research paper.",
         questions: [
-            {
-                prompt: "Which input device allows the student to enter text most efficiently?",
-                options: ["A Mouse", "B Keyboard", "C Scanner", "D Speaker"],
-                correct: "B",
-                hint: "Choose the device used to type text."
-            },
-            {
-                prompt: "Which software is best for creating and formatting a report?",
-                options: ["A Excel", "B Paint", "C Word Processor", "D Browser"],
-                correct: "C",
-                hint: "Think of the application used for writing and editing documents."
-            },
-            {
-                prompt: "Which output device would let the student review the document on-screen?",
-                options: ["A Printer", "B Monitor", "C Microphone", "D Webcam"],
-                correct: "B",
-                hint: "Pick the device that displays visual output."
-            }
+            { type: "multiple-choice", prompt: "Which input device allows the student to enter text most efficiently?", options: ["A Mouse", "B Keyboard", "C Scanner", "D Speaker"], correct: "B", hint: "Choose the device used to type text." },
+            { type: "multiple-choice", prompt: "Which software is best for creating and formatting a report?", options: ["A Excel", "B Paint", "C Word Processor", "D Browser"], correct: "C", hint: "Think of the application used for writing and editing documents." },
+            { type: "multiple-choice", prompt: "Which output device would let the student review the document on-screen?", options: ["A Printer", "B Monitor", "C Microphone", "D Webcam"], correct: "B", hint: "Pick the device that displays visual output." }
         ]
     },
     {
         title: "LEVEL 2: Report Printing",
         scenario: "Print a report.",
         questions: [
-            {
-                prompt: "Which component stores the report after it is saved?",
-                options: ["A CPU", "B RAM", "C SSD", "D Speaker"],
-                correct: "C",
-                hint: "Choose the storage component that keeps files."
-            },
-            {
-                prompt: "Which part temporarily holds data while the report is being edited?",
-                options: ["A Monitor", "B Printer", "C Keyboard", "D RAM"],
-                correct: "D",
-                hint: "Select the short-term working memory."
-            },
-            {
-                prompt: "Which device produces a physical copy of the report?",
-                options: ["A Scanner", "B Speaker", "C Printer", "D Microphone"],
-                correct: "C",
-                hint: "Choose the device that prints on paper."
-            }
+            { type: "identification", prompt: "Name the component that stores files permanently after saving.", correct: "ssd", hint: "It is a storage device." },
+            { type: "identification", prompt: "Name the part that temporarily holds data while a report is being edited.", correct: "ram", hint: "Think of short-term working memory." },
+            { type: "identification", prompt: "Name the device that produces a physical copy of the report.", correct: "printer", hint: "It prints on paper." }
         ]
     },
     {
         title: "LEVEL 3: Online Class",
         scenario: "Join an online class.",
         questions: [
-            {
-                prompt: "Which input device captures the student's voice?",
-                options: ["A Speaker", "B Monitor", "C Microphone", "D SSD"],
-                correct: "C",
-                hint: "Pick the device that records sound."
-            },
-            {
-                prompt: "Which application is designed for live video meetings?",
-                options: ["A Zoom", "B Word", "C Paint", "D Calculator"],
-                correct: "A",
-                hint: "Choose the app built for online communication."
-            },
-            {
-                prompt: "Which output device sends audio to the audience?",
-                options: ["A Keyboard", "B Speaker", "C Mouse", "D Printer"],
-                correct: "B",
-                hint: "Select the device that plays sound."
-            }
+            { type: "fill-blank", prompt: "The device that captures your voice is called a ______.", correct: "microphone", hint: "It records sound." },
+            { type: "fill-blank", prompt: "The app used for live video meetings is called ______.", correct: "zoom", hint: "It is a conferencing platform." },
+            { type: "fill-blank", prompt: "The device that plays sound is called a ______.", correct: "speaker", hint: "It outputs audio." }
         ]
     },
     {
         title: "LEVEL 4: Video Editing",
         scenario: "Edit a high-resolution video.",
         questions: [
-            {
-                prompt: "Which hardware is mainly responsible for fast image and video rendering?",
-                options: ["A CPU", "B GPU", "C HDD", "D Webcam"],
-                correct: "B",
-                hint: "Choose the component specialized for graphics processing."
-            },
-            {
-                prompt: "Which component helps the system run many tasks smoothly while editing?",
-                options: ["A Monitor", "B Printer", "C RAM", "D Scanner"],
-                correct: "C",
-                hint: "Think about the memory that supports active work."
-            },
-            {
-                prompt: "Which software is commonly used to edit video clips?",
-                options: ["A Premiere Pro", "B Notepad", "C Calculator", "D VLC"],
-                correct: "A",
-                hint: "Choose the editing application."
-            }
+            { type: "multiple-choice", prompt: "Which hardware is mainly responsible for fast image and video rendering?", options: ["A CPU", "B GPU", "C HDD", "D Webcam"], correct: "B", hint: "Choose the component specialized for graphics processing." },
+            { type: "multiple-choice", prompt: "Which component helps the system run many tasks smoothly while editing?", options: ["A Monitor", "B Printer", "C RAM", "D Scanner"], correct: "C", hint: "Think about the memory that supports active work." },
+            { type: "multiple-choice", prompt: "Which software is commonly used to edit video clips?", options: ["A Premiere Pro", "B Notepad", "C Calculator", "D VLC"], correct: "A", hint: "Choose the editing application." }
         ]
     },
     {
         title: "LEVEL 5: Online Banking",
         scenario: "Complete an online banking transaction.",
         questions: [
-            {
-                prompt: "Which software allows a user to access banking services online?",
-                options: ["A Browser", "B Banking App", "C Paint", "D Media Player"],
-                correct: "B",
-                hint: "Choose the application designed for banking tasks."
-            },
-            {
-                prompt: "Which hardware component connects a computer to a network?",
-                options: ["A Network Adapter", "B Printer", "C Microphone", "D SSD"],
-                correct: "A",
-                hint: "Select the component that enables networking."
-            },
-            {
-                prompt: "Which input device would a user use to enter a password?",
-                options: ["A Speaker", "B Scanner", "C Printer", "D Keyboard"],
-                correct: "D",
-                hint: "Pick the device used to enter information."
-            }
+            { type: "identification", prompt: "Name the software used to access banking services online.", correct: "banking app", hint: "It is an application for banking tasks." },
+            { type: "identification", prompt: "Name the hardware component that connects a computer to a network.", correct: "network adapter", hint: "It enables networking." },
+            { type: "identification", prompt: "Name the input device used to enter a password.", correct: "keyboard", hint: "It is used to type." }
         ]
     },
     {
         title: "LEVEL 6: Monitor Failure",
         scenario: "The monitor stops working.",
         questions: [
-            {
-                prompt: "If the monitor is dead but the computer still seems powered on, what is most likely happening?",
-                options: ["A The CPU has shut down", "B The monitor is not receiving output", "C The SSD has been erased", "D The keyboard is unplugged"],
-                correct: "B",
-                hint: "The processor can still run, but the visual output is lost."
-            }
+            { type: "fill-blank", prompt: "If the monitor is dead, the computer may still be processing but the display has no ______.", correct: "output", hint: "The system still runs, but the visual result is missing." }
         ]
     },
     {
         title: "LEVEL 7: Operating System Crash",
         scenario: "The operating system crashes.",
         questions: [
-            {
-                prompt: "If the operating system crashes, which statement is most accurate?",
-                options: ["A The computer can still run normally", "B The system can no longer manage software properly", "C The printer will start working faster", "D The CPU will become storage"],
-                correct: "B",
-                hint: "The system is no longer functioning correctly."
-            }
+            { type: "multiple-choice", prompt: "If the operating system crashes, which statement is most accurate?", options: ["A The computer can still run normally", "B The system can no longer manage software properly", "C The printer will start working faster", "D The CPU will become storage"], correct: "B", hint: "The system is no longer functioning correctly." }
         ]
     },
     {
         title: "LEVEL 8: Classification Round",
         scenario: "Classify each item as Hardware or Software.",
         questions: [
-            { prompt: "CPU", options: ["A Hardware", "B Software"], correct: "A", hint: "The CPU is physical equipment." },
-            { prompt: "Windows 11", options: ["A Hardware", "B Software"], correct: "B", hint: "Windows 11 is an operating system program." },
-            { prompt: "Google Chrome", options: ["A Hardware", "B Software"], correct: "B", hint: "Chrome is an application program." },
-            { prompt: "SSD", options: ["A Hardware", "B Software"], correct: "A", hint: "An SSD is a storage device." },
-            { prompt: "Firewall", options: ["A Hardware", "B Software"], correct: "B", hint: "A firewall is a protective software program." },
-            { prompt: "USB Cable", options: ["A Hardware", "B Software"], correct: "A", hint: "A cable is a physical component." }
+            { type: "identification", prompt: "Name the category for CPU.", correct: "hardware", hint: "It is a physical component." },
+            { type: "identification", prompt: "Name the category for Windows 11.", correct: "software", hint: "It is an operating system program." },
+            { type: "identification", prompt: "Name the category for Google Chrome.", correct: "software", hint: "It is an application program." }
         ]
     },
     {
         title: "LEVEL 9: Execution Order",
         scenario: "Put the system actions in the correct order.",
         questions: [
-            {
-                prompt: "Which sequence best describes saving a file correctly?",
-                options: [
-                    "A User Clicks Save -> Software Sends Command -> CPU Processes -> SSD Stores the File",
-                    "B SSD Stores the File -> CPU Processes -> Software Sends Command -> User Clicks Save",
-                    "C CPU Processes -> User Clicks Save -> SSD Stores the File -> Software Sends Command",
-                    "D Printer Prints -> Software Sends Command -> CPU Processes -> User Clicks Save"
-                ],
-                correct: "A",
-                hint: "Start with the user action, then the software, then the CPU, then storage."
-            }
+            { type: "fill-blank", prompt: "When saving a file, the user clicks save first, then the software sends a command, then the ______ processes the request, and finally the SSD stores it.", correct: "cpu", hint: "It is the main processing unit." }
         ]
     },
     {
         title: "LEVEL 10: Final Mission",
         scenario: "A student wants to type a report, save it, and print it.",
         questions: [
-            { prompt: "Input device for typing the report", options: ["A Monitor", "B Printer", "C Scanner", "D Keyboard"], correct: "D", hint: "Choose the device used for typing." },
-            { prompt: "Software used to compose and format the report", options: ["A Browser", "B Word Processor", "C Media Player", "D Calculator"], correct: "B", hint: "Choose the application used to write the report." },
-            { prompt: "Main unit that executes instructions", options: ["A Hard Drive", "B RAM", "C CPU", "D Monitor"], correct: "C", hint: "Pick the main processing unit." },
-            { prompt: "Temporary memory used while working", options: ["A RAM", "B SSD", "C Speaker", "D Mouse"], correct: "A", hint: "Select the short-term working memory." },
-            { prompt: "Storage component for saving files permanently", options: ["A Mouse", "B Printer", "C Monitor", "D SSD"], correct: "D", hint: "Choose the component that stores files." },
-            { prompt: "Output device that produces a hard copy", options: ["A Microphone", "B Webcam", "C Printer", "D Keyboard"], correct: "C", hint: "Select the device that produces the final printout." }
+            { type: "multiple-choice", prompt: "Input device for typing the report", options: ["A Monitor", "B Printer", "C Scanner", "D Keyboard"], correct: "D", hint: "Choose the device used for typing." },
+            { type: "multiple-choice", prompt: "Software used to compose and format the report", options: ["A Browser", "B Word Processor", "C Media Player", "D Calculator"], correct: "B", hint: "Choose the application used to write the report." },
+            { type: "multiple-choice", prompt: "Main unit that executes instructions", options: ["A Hard Drive", "B RAM", "C CPU", "D Monitor"], correct: "C", hint: "Pick the main processing unit." },
+            { type: "multiple-choice", prompt: "Temporary memory used while working", options: ["A RAM", "B SSD", "C Speaker", "D Mouse"], correct: "A", hint: "Select the short-term working memory." },
+            { type: "multiple-choice", prompt: "Storage component for saving files permanently", options: ["A Mouse", "B Printer", "C Monitor", "D SSD"], correct: "D", hint: "Choose the component that stores files." },
+            { type: "multiple-choice", prompt: "Output device that produces a hard copy", options: ["A Microphone", "B Webcam", "C Printer", "D Keyboard"], correct: "C", hint: "Select the device that produces the final printout." }
         ]
     }
 ];
@@ -245,6 +147,10 @@ function updateProgressBar() {
     document.getElementById('level-indicator').innerText = `LVL ${currentLevel + 1}/${levels.length}`;
 }
 
+function normalizeAnswer(value) {
+    return value.trim().toLowerCase().replace(/[^a-z0-9 ]/g, '');
+}
+
 function loadLevel() {
     if (currentLevel >= levels.length) {
         finishTest();
@@ -254,14 +160,32 @@ function loadLevel() {
     failedAttempts = 0;
     const levelData = levels[currentLevel];
     const question = levelData.questions[currentQuestionIndex];
+
+    if (!question) {
+        finishTest();
+        return;
+    }
+
+    const questionType = question.type || 'multiple-choice';
+    const typeLabel = questionType === 'multiple-choice' ? 'Multiple Choice' : questionType === 'identification' ? 'Identification' : 'Fill in the Blank';
+    const optionsMarkup = questionType === 'multiple-choice' && question.options
+        ? `<p>${question.options.join('<br>')}</p>`
+        : '';
+    const answerPrompt = questionType === 'multiple-choice'
+        ? 'Type A, B, C, or D...'
+        : questionType === 'identification'
+            ? 'Type the correct term...'
+            : 'Type the missing word(s)...';
+
     document.getElementById('level-title').innerText = levelData.title;
     document.getElementById('lesson-content').innerHTML = `
         <h3>${levelData.scenario}</h3>
+        <div class="question-type-badge">${typeLabel}</div>
         <p><strong>Question ${currentQuestionIndex + 1}:</strong> ${question.prompt}</p>
-        <p>${question.options.join('<br>')}</p>
+        ${optionsMarkup}
     `;
     document.getElementById('code-editor').value = '';
-    document.getElementById('code-editor').placeholder = 'Type A, B, C, or D...';
+    document.getElementById('code-editor').placeholder = answerPrompt;
     document.getElementById('output-display').innerHTML = '<div style="color: #555;">// Awaiting analysis...</div>';
     
     document.getElementById('hint-box').style.display = 'none';
@@ -276,30 +200,37 @@ function triggerAccessDenied() {
 }
 
 function runCode() {
-    const userAnswer = document.getElementById('code-editor').value.trim().toUpperCase();
+    const rawAnswer = document.getElementById('code-editor').value;
     const outputDisplay = document.getElementById('output-display');
     const levelData = levels[currentLevel];
     const question = levelData.questions[currentQuestionIndex];
+    const questionType = question.type || 'multiple-choice';
 
     outputDisplay.innerHTML = '';
 
-    if (!['A', 'B', 'C', 'D'].includes(userAnswer)) {
-        outputDisplay.innerHTML += `<div class="error-msg">[-] Invalid response. Please enter A, B, C, or D.</div>`;
-        triggerAccessDenied();
-        document.getElementById('run-btn').disabled = true;
+    let isCorrect = false;
 
-        setTimeout(() => {
-            advanceToNextQuestion(levelData);
-            document.getElementById('run-btn').disabled = false;
-        }, 1400);
-        return;
+    if (questionType === 'multiple-choice') {
+        const userAnswer = rawAnswer.trim().toUpperCase();
+        if (!['A', 'B', 'C', 'D'].includes(userAnswer)) {
+            outputDisplay.innerHTML += `<div class="error-msg">[-] Invalid response. Please enter A, B, C, or D.</div>`;
+            triggerAccessDenied();
+        } else {
+            isCorrect = userAnswer === question.correct.toUpperCase();
+        }
+    } else {
+        const normalizedInput = normalizeAnswer(rawAnswer);
+        const acceptedAnswers = Array.isArray(question.acceptedAnswers)
+            ? question.acceptedAnswers
+            : [question.correct];
+        isCorrect = acceptedAnswers.some(answer => normalizeAnswer(answer) === normalizedInput);
     }
 
-    if (userAnswer === question.correct) {
+    if (isCorrect) {
         correctAnswers++;
-        outputDisplay.innerHTML += `<div class="success-msg">[+] Correct Component Selected.<br>Continuing System Execution...</div>`;
+        outputDisplay.innerHTML += `<div class="success-msg">[+] Correct Answer.<br>Continuing to the next question...</div>`;
     } else {
-        outputDisplay.innerHTML += `<div class="error-msg">[-] Incorrect Component Selected.<br>System Execution Failed.</div>`;
+        outputDisplay.innerHTML += `<div class="error-msg">[-] Incorrect Answer.<br>Continuing to the next question...</div>`;
     }
 
     document.getElementById('run-btn').disabled = true;
@@ -315,8 +246,8 @@ function advanceToNextQuestion(levelData) {
     if (currentQuestionIndex >= levelData.questions.length) {
         currentQuestionIndex = 0;
         currentLevel++;
-        updateProgressBar();
     }
+    updateProgressBar();
     loadLevel();
 }
 
