@@ -40,7 +40,7 @@ const levels = [
         title: "LEVEL 2: Storage and System Memory",
         scenario: "A designer saves large project files and opens them later.",
         questions: [
-            { type: "identification", prompt: "Name the storage component that keeps files even after power is turned off.", correct: "ssd", acceptedAnswers: ["solid state drive", "hard drive", "hdd"], hint: "It is permanent storage." },
+            { type: "identification", prompt: "Name the storage component that keeps files even after power is turned off.", correct: "ssd", acceptedAnswers: ["ssd","solid state drive", "hard drive", "hdd"], hint: "It is permanent storage." },
             { type: "multiple-choice", prompt: "Which component links the CPU, memory, and peripherals on the motherboard?", options: ["A Router", "B Chipset", "C Speaker", "D Webcam"], correct: "B", hint: "It helps coordinate communication between components." },
             { type: "fill-blank", prompt: "The main circuit board inside the computer is called the ______.", correct: "motherboard", hint: "It is the central board that connects hardware." }
         ]
