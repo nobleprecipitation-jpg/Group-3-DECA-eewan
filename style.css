@@ -135,6 +135,44 @@ code { color: #fff; text-shadow: 0 0 3px rgba(255,255,255,0.5); font-size: 1.1em
 .success-msg { color: #fff; text-shadow: 0 0 8px #fff; font-weight: bold; margin-top: 20px; background: rgba(0, 255, 0, 0.2); padding: 10px;}
 .error-msg { color: var(--alert-red); text-shadow: 0 0 5px var(--alert-red);}
 
+.error-terminal {
+    background: rgba(20, 0, 0, 0.95);
+    border: 2px solid var(--alert-red);
+    box-shadow: 0 0 30px rgba(255, 51, 51, 0.4);
+    padding: 30px 40px;
+    max-width: 520px;
+    text-align: center;
+    animation: error-flicker 0.8s infinite alternate;
+}
+
+.error-code {
+    color: #ff7777;
+    font-size: 1.1em;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.error-title {
+    color: #fff;
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 12px var(--alert-red);
+}
+
+.error-line {
+    color: #ffb3b3;
+    margin: 8px 0;
+    font-size: 1.05em;
+}
+
+@keyframes error-flicker {
+    from { opacity: 0.9; transform: scale(1); }
+    to { opacity: 1; transform: scale(1.01); }
+}
+
 /* Access Denied Flash Effect(WOMP WOMP) */
 .flash-red {
     animation: alert-flash 0.3s 2;

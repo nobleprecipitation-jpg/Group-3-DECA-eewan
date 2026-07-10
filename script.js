@@ -32,22 +32,22 @@ const levels = [
         scenario: "A student wants to type a research paper.",
         questions: [
             {
-                prompt: "Which INPUT device is used?",
-                options: ["A Monitor", "B Keyboard", "C Printer", "D Speaker"],
+                prompt: "Which input device allows the student to enter text most efficiently?",
+                options: ["A Mouse", "B Keyboard", "C Scanner", "D Speaker"],
                 correct: "B",
                 hint: "Choose the device used to type text."
             },
             {
-                prompt: "Which SOFTWARE is used?",
-                options: ["A Microsoft Word", "B VLC", "C Paint", "D Calculator"],
-                correct: "A",
-                hint: "Choose the word processor for writing a paper."
+                prompt: "Which software is best for creating and formatting a report?",
+                options: ["A Excel", "B Paint", "C Word Processor", "D Browser"],
+                correct: "C",
+                hint: "Think of the application used for writing and editing documents."
             },
             {
-                prompt: "Which OUTPUT device displays the document?",
-                options: ["A Monitor", "B Mouse", "C Webcam", "D Scanner"],
-                correct: "A",
-                hint: "Pick the screen that shows the document."
+                prompt: "Which output device would let the student review the document on-screen?",
+                options: ["A Printer", "B Monitor", "C Microphone", "D Webcam"],
+                correct: "B",
+                hint: "Pick the device that displays visual output."
             }
         ]
     },
@@ -56,22 +56,22 @@ const levels = [
         scenario: "Print a report.",
         questions: [
             {
-                prompt: "Software?",
-                options: ["A Word", "B Paint", "C Chrome", "D Spotify"],
-                correct: "A",
-                hint: "Choose the application used to create documents."
+                prompt: "Which component stores the report after it is saved?",
+                options: ["A CPU", "B RAM", "C SSD", "D Speaker"],
+                correct: "C",
+                hint: "Choose the storage component that keeps files."
             },
             {
-                prompt: "Temporary memory?",
-                options: ["A RAM", "B Speaker", "C Mouse", "D Webcam"],
-                correct: "A",
+                prompt: "Which part temporarily holds data while the report is being edited?",
+                options: ["A Monitor", "B Printer", "C Keyboard", "D RAM"],
+                correct: "D",
                 hint: "Select the short-term working memory."
             },
             {
-                prompt: "Final output device?",
-                options: ["A Printer", "B Keyboard", "C Scanner", "D Microphone"],
-                correct: "A",
-                hint: "Choose the device that produces a hard copy."
+                prompt: "Which device produces a physical copy of the report?",
+                options: ["A Scanner", "B Speaker", "C Printer", "D Microphone"],
+                correct: "C",
+                hint: "Choose the device that prints on paper."
             }
         ]
     },
@@ -80,22 +80,22 @@ const levels = [
         scenario: "Join an online class.",
         questions: [
             {
-                prompt: "Input device for voice?",
-                options: ["A Microphone", "B Speaker", "C Printer", "D Monitor"],
-                correct: "A",
-                hint: "Pick the device that captures sound."
+                prompt: "Which input device captures the student's voice?",
+                options: ["A Speaker", "B Monitor", "C Microphone", "D SSD"],
+                correct: "C",
+                hint: "Pick the device that records sound."
             },
             {
-                prompt: "Software?",
-                options: ["A Zoom", "B Excel", "C Paint", "D VLC"],
+                prompt: "Which application is designed for live video meetings?",
+                options: ["A Zoom", "B Word", "C Paint", "D Calculator"],
                 correct: "A",
-                hint: "Choose the video conferencing app."
+                hint: "Choose the app built for online communication."
             },
             {
-                prompt: "Output device?",
-                options: ["A Speaker", "B Mouse", "C Webcam", "D SSD"],
-                correct: "A",
-                hint: "Select the device that plays audio."
+                prompt: "Which output device sends audio to the audience?",
+                options: ["A Keyboard", "B Speaker", "C Mouse", "D Printer"],
+                correct: "B",
+                hint: "Select the device that plays sound."
             }
         ]
     },
@@ -104,20 +104,20 @@ const levels = [
         scenario: "Edit a high-resolution video.",
         questions: [
             {
-                prompt: "Which hardware performs rendering?",
-                options: ["A GPU", "B Keyboard", "C SSD", "D Mouse"],
-                correct: "A",
+                prompt: "Which hardware is mainly responsible for fast image and video rendering?",
+                options: ["A CPU", "B GPU", "C HDD", "D Webcam"],
+                correct: "B",
                 hint: "Choose the component specialized for graphics processing."
             },
             {
-                prompt: "Why is RAM important?",
-                options: ["A Temporary memory", "B Prints documents", "C Stores internet", "D Connects Wi-Fi"],
-                correct: "A",
-                hint: "Select the purpose of RAM."
+                prompt: "Which component helps the system run many tasks smoothly while editing?",
+                options: ["A Monitor", "B Printer", "C RAM", "D Scanner"],
+                correct: "C",
+                hint: "Think about the memory that supports active work."
             },
             {
-                prompt: "Software?",
-                options: ["A Premiere Pro", "B Calculator", "C Paint", "D Notepad"],
+                prompt: "Which software is commonly used to edit video clips?",
+                options: ["A Premiere Pro", "B Notepad", "C Calculator", "D VLC"],
                 correct: "A",
                 hint: "Choose the editing application."
             }
@@ -128,21 +128,21 @@ const levels = [
         scenario: "Complete an online banking transaction.",
         questions: [
             {
-                prompt: "Software?",
-                options: ["A Banking App", "B Paint", "C VLC", "D Calculator"],
-                correct: "A",
-                hint: "Choose the application for banking tasks."
+                prompt: "Which software allows a user to access banking services online?",
+                options: ["A Browser", "B Banking App", "C Paint", "D Media Player"],
+                correct: "B",
+                hint: "Choose the application designed for banking tasks."
             },
             {
-                prompt: "Hardware that connects to the Internet?",
-                options: ["A Network Adapter", "B Speaker", "C Mouse", "D SSD"],
+                prompt: "Which hardware component connects a computer to a network?",
+                options: ["A Network Adapter", "B Printer", "C Microphone", "D SSD"],
                 correct: "A",
                 hint: "Select the component that enables networking."
             },
             {
-                prompt: "Input device?",
-                options: ["A Keyboard", "B Printer", "C Speaker", "D Webcam"],
-                correct: "A",
+                prompt: "Which input device would a user use to enter a password?",
+                options: ["A Speaker", "B Scanner", "C Printer", "D Keyboard"],
+                correct: "D",
                 hint: "Pick the device used to enter information."
             }
         ]
@@ -152,10 +152,10 @@ const levels = [
         scenario: "The monitor stops working.",
         questions: [
             {
-                prompt: "What happens?",
-                options: ["A CPU stops", "B CPU continues processing but nothing is displayed", "C SSD is deleted", "D RAM stops"],
+                prompt: "If the monitor is dead but the computer still seems powered on, what is most likely happening?",
+                options: ["A The CPU has shut down", "B The monitor is not receiving output", "C The SSD has been erased", "D The keyboard is unplugged"],
                 correct: "B",
-                hint: "The processor can still run, but output is lost."
+                hint: "The processor can still run, but the visual output is lost."
             }
         ]
     },
@@ -164,8 +164,8 @@ const levels = [
         scenario: "The operating system crashes.",
         questions: [
             {
-                prompt: "Can hardware still perform normal user tasks?",
-                options: ["A Yes", "B No"],
+                prompt: "If the operating system crashes, which statement is most accurate?",
+                options: ["A The computer can still run normally", "B The system can no longer manage software properly", "C The printer will start working faster", "D The CPU will become storage"],
                 correct: "B",
                 hint: "The system is no longer functioning correctly."
             }
@@ -177,10 +177,10 @@ const levels = [
         questions: [
             { prompt: "CPU", options: ["A Hardware", "B Software"], correct: "A", hint: "The CPU is physical equipment." },
             { prompt: "Windows 11", options: ["A Hardware", "B Software"], correct: "B", hint: "Windows 11 is an operating system program." },
-            { prompt: "Keyboard", options: ["A Hardware", "B Software"], correct: "A", hint: "The keyboard is a physical device." },
             { prompt: "Google Chrome", options: ["A Hardware", "B Software"], correct: "B", hint: "Chrome is an application program." },
             { prompt: "SSD", options: ["A Hardware", "B Software"], correct: "A", hint: "An SSD is a storage device." },
-            { prompt: "Microsoft Word", options: ["A Hardware", "B Software"], correct: "B", hint: "Word is application software." }
+            { prompt: "Firewall", options: ["A Hardware", "B Software"], correct: "B", hint: "A firewall is a protective software program." },
+            { prompt: "USB Cable", options: ["A Hardware", "B Software"], correct: "A", hint: "A cable is a physical component." }
         ]
     },
     {
@@ -188,12 +188,12 @@ const levels = [
         scenario: "Put the system actions in the correct order.",
         questions: [
             {
-                prompt: "Which sequence is correct?",
+                prompt: "Which sequence best describes saving a file correctly?",
                 options: [
-                    "A User Clicks Save -> Software Sends Command -> CPU Processes -> SSD Stores File",
-                    "B CPU Processes -> SSD Stores File -> Software Sends Command -> User Clicks Save",
-                    "C SSD Stores File -> User Clicks Save -> CPU Processes -> Software Sends Command",
-                    "D Software Sends Command -> SSD Stores File -> User Clicks Save -> CPU Processes"
+                    "A User Clicks Save -> Software Sends Command -> CPU Processes -> SSD Stores the File",
+                    "B SSD Stores the File -> CPU Processes -> Software Sends Command -> User Clicks Save",
+                    "C CPU Processes -> User Clicks Save -> SSD Stores the File -> Software Sends Command",
+                    "D Printer Prints -> Software Sends Command -> CPU Processes -> User Clicks Save"
                 ],
                 correct: "A",
                 hint: "Start with the user action, then the software, then the CPU, then storage."
@@ -204,12 +204,12 @@ const levels = [
         title: "LEVEL 10: Final Mission",
         scenario: "A student wants to type a report, save it, and print it.",
         questions: [
-            { prompt: "Input Device", options: ["A Keyboard", "B Printer", "C SSD", "D CPU"], correct: "A", hint: "Choose the device used for typing." },
-            { prompt: "Software", options: ["A Word Processor", "B Monitor", "C RAM", "D Mouse"], correct: "A", hint: "Choose the application used to write the report." },
-            { prompt: "CPU", options: ["A Processor", "B Printer", "C Speaker", "D Scanner"], correct: "A", hint: "Pick the main processing unit." },
-            { prompt: "RAM", options: ["A Temporary Memory", "B Storage Drive", "C Output Screen", "D Network Card"], correct: "A", hint: "Select the short-term working memory." },
-            { prompt: "Storage", options: ["A SSD", "B Keyboard", "C Monitor", "D Speaker"], correct: "A", hint: "Choose the component that stores files." },
-            { prompt: "Output Device", options: ["A Printer", "B Microphone", "C Mouse", "D Webcam"], correct: "A", hint: "Select the device that produces the final printout." }
+            { prompt: "Input device for typing the report", options: ["A Monitor", "B Printer", "C Scanner", "D Keyboard"], correct: "D", hint: "Choose the device used for typing." },
+            { prompt: "Software used to compose and format the report", options: ["A Browser", "B Word Processor", "C Media Player", "D Calculator"], correct: "B", hint: "Choose the application used to write the report." },
+            { prompt: "Main unit that executes instructions", options: ["A Hard Drive", "B RAM", "C CPU", "D Monitor"], correct: "C", hint: "Pick the main processing unit." },
+            { prompt: "Temporary memory used while working", options: ["A RAM", "B SSD", "C Speaker", "D Mouse"], correct: "A", hint: "Select the short-term working memory." },
+            { prompt: "Storage component for saving files permanently", options: ["A Mouse", "B Printer", "C Monitor", "D SSD"], correct: "D", hint: "Choose the component that stores files." },
+            { prompt: "Output device that produces a hard copy", options: ["A Microphone", "B Webcam", "C Printer", "D Keyboard"], correct: "C", hint: "Select the device that produces the final printout." }
         ]
     }
 ];
@@ -218,8 +218,15 @@ const levels = [
 let currentLevel = 0;
 let currentQuestionIndex = 0;
 let failedAttempts = 0;
+let correctAnswers = 0;
+const totalQuestions = levels.reduce((sum, level) => sum + level.questions.length, 0);
 
 function startGame() {
+    currentLevel = 0;
+    currentQuestionIndex = 0;
+    failedAttempts = 0;
+    correctAnswers = 0;
+
     document.getElementById('menu-overlay').style.display = 'none';
     document.getElementById('game-ui').style.display = 'flex';
     updateProgressBar();
@@ -227,14 +234,20 @@ function startGame() {
 }
 
 function updateProgressBar() {
-    const progressPercentage = (currentLevel / levels.length) * 100;
+    let completedQuestions = 0;
+    for (let i = 0; i < currentLevel; i++) {
+        completedQuestions += levels[i].questions.length;
+    }
+    completedQuestions += currentQuestionIndex;
+
+    const progressPercentage = (completedQuestions / totalQuestions) * 100;
     document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
-    document.getElementById('level-indicator').innerText = `LVL ${currentLevel + 1}/10`;
+    document.getElementById('level-indicator').innerText = `LVL ${currentLevel + 1}/${levels.length}`;
 }
 
 function loadLevel() {
     if (currentLevel >= levels.length) {
-        gameComplete();
+        finishTest();
         return;
     }
 
@@ -276,6 +289,7 @@ function runCode() {
     }
 
     if (userAnswer === question.correct) {
+        correctAnswers++;
         outputDisplay.innerHTML += `<div class="success-msg">[+] Correct Component Selected.<br>Continuing System Execution...</div>`;
         document.getElementById('run-btn').disabled = true;
 
@@ -303,6 +317,53 @@ function handleFailure(msg) {
     if (failedAttempts >= 4) {
         document.getElementById('hint-box').style.display = 'block';
     }
+}
+
+function finishTest() {
+    const percent = (correctAnswers / totalQuestions) * 100;
+    if (percent >= 90) {
+        gameComplete();
+    } else {
+        showFailureEnding(percent);
+    }
+}
+
+function showFailureEnding(percent) {
+    document.getElementById('game-ui').style.display = 'none';
+
+    const overlay = document.getElementById('bomb-animation-overlay');
+    const bombContainer = document.getElementById('bomb-animation-container');
+    const congrats = document.getElementById('congrats-message');
+    const matrixCanvas = document.getElementById('matrix-canvas');
+
+    if (matrixCanvas) {
+        matrixCanvas.style.zIndex = '1';
+        matrixCanvas.style.position = 'fixed';
+        matrixCanvas.style.inset = '0';
+    }
+
+    overlay.style.cssText = `
+        display:flex; flex-direction:column; align-items:center;
+        justify-content:center; position:fixed; inset:0;
+        z-index:9999; overflow:hidden;
+        background:rgba(20,0,0,0.95);
+        transition: background 0.8s ease;
+    `;
+
+    congrats.style.display = 'none';
+    congrats.innerHTML = '';
+    bombContainer.innerHTML = '';
+
+    bombContainer.innerHTML = `
+        <div class="error-terminal">
+            <div class="error-code">ERROR 0xA1</div>
+            <div class="error-title">ACCESS DENIED</div>
+            <div class="error-line">SYSTEM TEST FAILED</div>
+            <div class="error-line">FINAL SCORE: ${Math.round(percent)}%</div>
+            <div class="error-line">REQUIREMENT: 90% MINIMUM</div>
+            <div class="error-line">REINITIALIZE THE PROTOCOL</div>
+        </div>
+    `;
 }
 
 // gameComplete() — Drop-in replacement
