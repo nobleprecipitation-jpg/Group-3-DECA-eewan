@@ -240,14 +240,15 @@ function handleFailure(msg) {
 
 function finishTest() {
     const percent = (correctAnswers / totalQuestions) * 100;
+    const scoreOutOf = `${correctAnswers}/${totalQuestions}`;
     if (percent >= 85) {
-        gameComplete(percent);
+        gameComplete(percent, scoreOutOf);
     } else {
-        showFailureEnding(percent);
+        showFailureEnding(percent, scoreOutOf);
     }
 }
 
-function showFailureEnding(percent) {
+function showFailureEnding(percent, scoreOutOf) {
     document.getElementById('game-ui').style.display = 'none';
 
     const overlay = document.getElementById('bomb-animation-overlay');
@@ -278,7 +279,7 @@ function showFailureEnding(percent) {
             <div class="error-code">ERROR 0xA1</div>
             <div class="error-title">ACCESS DENIED</div>
             <div class="error-line">SYSTEM TEST FAILED</div>
-            <div class="error-line">FINAL SCORE: ${Math.round(percent)}%</div>
+            <div class="error-line">FINAL SCORE: ${Math.round(percent)}% (${scoreOutOf})</div>
             <div class="error-line">REQUIREMENT: 85% MINIMUM</div>
             <div class="error-line">REINITIALIZE THE PROTOCOL</div>
         </div>
@@ -289,7 +290,7 @@ function showFailureEnding(percent) {
 // #bomb-animation-overlay, #bomb-animation-container,
 // #congrats-message, #matrix-canvas in your HTML.
 
-function gameComplete(percent) {
+function gameComplete(percent, scoreOutOf) {
     document.getElementById('game-ui').style.display = 'none';
 
     const overlay       = document.getElementById('bomb-animation-overlay');
@@ -984,7 +985,7 @@ function gameComplete(percent) {
         const lines = [
             { t:'[SYS]  Analysis confirmed. System architecture online.', d:80,   c:'#ff8800', spd:22 },
             { t:'[SYS]  Hardware verified .............. COMPLETE',         d:560,  c:'#ff4400', spd:18 },
-            { t:`[SYS]  FINAL SCORE: ${Math.round(percent)}%`,              d:1120, c:'#00ffff', spd:16 },
+            { t:`[SYS]  FINAL SCORE: ${Math.round(percent)}% (${scoreOutOf})`, d:1120, c:'#00ffff', spd:16 },
             { t:'[SYS]  Software verified .............. COMPLETE',         d:980,  c:'#ff4400', spd:18 },
             { t:'[SYS]  CPU and RAM aligned ............ COMPLETE',         d:1360, c:'#ff4400', spd:18 },
             { t:'[SYS]  Storage and output confirmed ... COMPLETE',        d:1720, c:'#ff4400', spd:18 },
