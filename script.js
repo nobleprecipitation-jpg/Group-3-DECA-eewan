@@ -167,6 +167,23 @@ function runCode() {
 
     outputDisplay.innerHTML = '';
 
+    const secretWord = normalizeAnswer(rawAnswer);
+    if (currentLevel === 0 && currentQuestionIndex === 0 && (secretWord === 'pass' || secretWord === 'fail')) {
+        if (secretWord === 'pass') {
+            correctAnswers = totalQuestions;
+            outputDisplay.innerHTML += `<div class="success-msg">[+] Secret override activated. Passing ending triggered.</div>`;
+        } else {
+            correctAnswers = 0;
+            outputDisplay.innerHTML += `<div class="error-msg">[-] Secret override activated. Failing ending triggered.</div>`;
+        }
+
+        document.getElementById('run-btn').disabled = true;
+        setTimeout(() => {
+            finishTest();
+        }, 800);
+        return;
+    }
+
     let isCorrect = false;
 
     if (questionType === 'multiple-choice') {
