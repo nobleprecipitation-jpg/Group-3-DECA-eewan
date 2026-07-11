@@ -59,6 +59,7 @@ const levels = [
         scenario: "A student joins a video call and transfers files across a network.",
         questions: [
             { type: "multiple-choice", prompt: "Which hardware component lets a computer connect to a network?", options: ["A GPU", "B Network Adapter", "C Monitor", "D Keyboard"], correct: "B", hint: "It enables wired or wireless communication." },
+         
             { type: "identification", prompt: "Name the component mainly responsible for rendering images and video quickly.", correct: "gpu", acceptedAnswers: ["gpu","graphics processing unit", "graphics card"], hint: "It handles visual processing." },
             { type: "fill-blank", prompt: "The device that captures sound for voice input is called a ______.", correct: "microphone", hint: "It records your voice." }
         ]
