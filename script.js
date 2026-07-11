@@ -50,7 +50,7 @@ const levels = [
         scenario: "A user opens apps, manages files, and runs a browser.",
         questions: [
             { type: "multiple-choice", prompt: "Which software directly manages hardware and allows applications to run?", options: ["A Browser", "B Operating System", "C Calculator", "D Printer Driver"], correct: "B", hint: "It is the platform that controls the computer." },
-            { type: "identification", prompt: "Name the software used to browse the internet and access websites.", correct: "browser", acceptedAnswers: ["web browser", "google chrome", "firefox"], hint: "It displays webpages." },
+            { type: "identification", prompt: "Name the software used to browse the internet and access websites.", correct: "browser", acceptedAnswers: ["browser", "web browser", "google chrome", "firefox"], hint: "It displays webpages." },
             { type: "fill-blank", prompt: "A set of instructions that tells a computer what to do is called a ______.", correct: "program", hint: "It is a software instruction set." }
         ]
     },
@@ -59,7 +59,7 @@ const levels = [
         scenario: "A student joins a video call and transfers files across a network.",
         questions: [
             { type: "multiple-choice", prompt: "Which hardware component lets a computer connect to a network?", options: ["A GPU", "B Network Adapter", "C Monitor", "D Keyboard"], correct: "B", hint: "It enables wired or wireless communication." },
-            { type: "identification", prompt: "Name the component mainly responsible for rendering images and video quickly.", correct: "gpu", acceptedAnswers: ["graphics processing unit", "graphics card"], hint: "It handles visual processing." },
+            { type: "identification", prompt: "Name the component mainly responsible for rendering images and video quickly.", correct: "gpu", acceptedAnswers: ["gpu","graphics processing unit", "graphics card"], hint: "It handles visual processing." },
             { type: "fill-blank", prompt: "The device that captures sound for voice input is called a ______.", correct: "microphone", hint: "It records your voice." }
         ]
     },
@@ -222,8 +222,8 @@ function handleFailure(msg) {
 
 function finishTest() {
     const percent = (correctAnswers / totalQuestions) * 100;
-    if (percent >= 90) {
-        gameComplete();
+    if (percent >= 85) {
+        gameComplete(percent);
     } else {
         showFailureEnding(percent);
     }
@@ -261,7 +261,7 @@ function showFailureEnding(percent) {
             <div class="error-title">ACCESS DENIED</div>
             <div class="error-line">SYSTEM TEST FAILED</div>
             <div class="error-line">FINAL SCORE: ${Math.round(percent)}%</div>
-            <div class="error-line">REQUIREMENT: 90% MINIMUM</div>
+            <div class="error-line">REQUIREMENT: 85% MINIMUM</div>
             <div class="error-line">REINITIALIZE THE PROTOCOL</div>
         </div>
     `;
@@ -271,7 +271,7 @@ function showFailureEnding(percent) {
 // #bomb-animation-overlay, #bomb-animation-container,
 // #congrats-message, #matrix-canvas in your HTML.
 
-function gameComplete() {
+function gameComplete(percent) {
     document.getElementById('game-ui').style.display = 'none';
 
     const overlay       = document.getElementById('bomb-animation-overlay');
@@ -966,6 +966,7 @@ function gameComplete() {
         const lines = [
             { t:'[SYS]  Analysis confirmed. System architecture online.', d:80,   c:'#ff8800', spd:22 },
             { t:'[SYS]  Hardware verified .............. COMPLETE',         d:560,  c:'#ff4400', spd:18 },
+            { t:`[SYS]  FINAL SCORE: ${Math.round(percent)}%`,              d:1120, c:'#00ffff', spd:16 },
             { t:'[SYS]  Software verified .............. COMPLETE',         d:980,  c:'#ff4400', spd:18 },
             { t:'[SYS]  CPU and RAM aligned ............ COMPLETE',         d:1360, c:'#ff4400', spd:18 },
             { t:'[SYS]  Storage and output confirmed ... COMPLETE',        d:1720, c:'#ff4400', spd:18 },
